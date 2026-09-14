@@ -272,12 +272,11 @@ footer a:hover {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  /* breakout : la galerie déborde du conteneur .project-content (900px) 
-     pour s'étendre sur toute la largeur de l'écran */
   width: 100vw;
+  max-width: 1200px;       /* la galerie ne dépasse plus cette largeur */
   position: relative;
   left: 50%;
-  margin-left: -50vw;
+  transform: translateX(-50%);  /* recentre correctement une fois la largeur plafonnée */
 }
 
 .photo-card {

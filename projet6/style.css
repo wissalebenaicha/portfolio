@@ -216,6 +216,34 @@ ul li {
   z-index: 10;
 }
 
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 560px; /* taille de base (mobile/tablette) */
+  aspect-ratio: 16 / 9;
+  margin: 0 auto; /* centre le conteneur */
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Écrans moyens (tablette/petit desktop) */
+@media (min-width: 768px) {
+  .video-wrapper {
+    max-width: 720px;
+  }
+}
+
+/* Grands écrans (desktop) */
+@media (min-width: 1200px) {
+  .video-wrapper {
+    max-width: 960px;
+  }
+}
+
 /* ================= BOUTON ================= */
 .button {
   background-color: var(--cv-pink);

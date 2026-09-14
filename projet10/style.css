@@ -1,0 +1,282 @@
+@font-face {
+    font-family: 'Ragazzi';
+    src: url('font/ragazzi.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Coolvetica';
+    src: url('font/coolvetica.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Coolvetica Bold';
+    src: url('font/coolveticabold.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root {
+  --bg-dark-main: #344c73;       
+  --bg-dark-secondary: #d5e2f3;  
+  --text-light: #4a6fa0;         
+  --text-on-card: #344c73;       
+  --card-bg: #eef2fa;            
+  --accent-muted: #7d9ac9;       
+  --accent-pop: #d1588c;         
+  --grid-line-color: rgba(38, 48, 90, 0.12); 
+  --shadow-offset-dark: 12px 12px 0px rgba(0, 0, 0, 0.4);
+  --cv-pink: #d1588c;            
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Coolvetica', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: justify;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark-secondary);
+  color: var(--text-light);
+  background-image: 
+    linear-gradient(var(--grid-line-color) 1px, transparent 1px),
+    linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* ================= NAV ================= */
+nav {
+  background: #1c304dfc;
+  backdrop-filter: blur(12px);
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: #ffffff;
+  font-family: 'Ragazzi', serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.3s, opacity 0.3s;
+}
+
+nav a:hover {
+  color: var(--accent-pop);
+  opacity: 0.8;
+}
+
+/* ================= HERO (Identique Accueil) ================= */
+.hero {
+  --grid-line-color: rgba(255, 255, 255, 0.127);
+  position: relative;
+  min-height: 450px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  background-color: var(--bg-dark-main);
+  background-image: 
+    linear-gradient(var(--grid-line-color) 1px, transparent 1px),
+    linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+#header {
+  color:#f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
+}
+
+#header h1 {
+  font-family: 'Ragazzi', serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.9;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  text-shadow: -0.02em 0.03em 0 #4a6fa0;
+}
+
+#header p {
+  font-size: 1.2rem;
+  color: #f0f0f0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* ================= CONTENU PROJET ================= */
+.project-content {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+h2, h3 {
+  font-family: 'Coolvetica Bold', sans-serif;
+  text-transform: uppercase;
+  color: var(--text-light);
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 2.2rem;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  border-left: 5px solid var(--accent-pop);
+  padding-left: 15px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+ul {
+  padding-left: 20px;
+  margin-bottom: 1.5rem;
+}
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* ================= IMAGE FAÇON POLAROID ================= */
+.showcase-image {
+  background: var(--card-bg);
+  padding: 15px 15px 40px 15px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.1) inset, var(--shadow-offset-dark);
+  position: relative;
+  transform: rotate(-1deg);
+  max-width: 80%;
+  margin: 4rem auto;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.showcase-image img {
+  width: 100%;
+  display: block;
+}
+.showcase-image:hover {
+  transform: rotate(0deg) scale(1.02);
+  box-shadow: 18px 18px 0px rgba(0, 0, 0, 0.5);
+}
+/* Le scotch sur l'image */
+.showcase-image::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-5deg);
+  width: 60px;
+  height: 25px;
+   background-color: var(--cv-pink);
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+/* ================= BOUTON ================= */
+.button {
+  background-color: var(--cv-pink);
+  color: #ffffff;
+  border: none;
+  padding: 12px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  font-weight: 700;
+  border: 2px solid var(--color-pink-accent);
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.5);
+}
+.button:hover {
+  background-color: #344c73;
+  color: #ffffff;
+  transform: translateY(-2px);
+  border: 2px solid var(--color-pink-accent);
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background-color: #344c73;
+  color: #ffffff;
+  padding: 3rem;
+  text-align: center;
+  font-family: 'Syne', sans-serif;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  margin-top: 4rem;
+}
+footer a {
+  font-family: 'Coolvetica Bold', sans-serif;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+footer a:hover {
+  letter-spacing: 1px;
+  color: var(--accent-pop) !important;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  #header h1 {
+    font-size: 3.5rem;
+  }
+  .hero {
+    min-height: 300px;
+  }
+  .project-content {
+    padding: 0 1.5rem;
+  }
+  .showcase-image {
+    max-width: 100%;
+  }
+}
